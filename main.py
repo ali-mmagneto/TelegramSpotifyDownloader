@@ -42,7 +42,7 @@ def get_single_song(bot, update):
     os.chdir(f'./.temp{message_id}{chat_id}')
 
     logging.log(logging.INFO, f'start downloading')
-    bot.send_message(chat_id=chat_id, text="Fetching...")
+    bot.send_message(chat_id=chat_id, text="Müzikler İndiriliyor...\nSüresi Kaç Müzik Olduğuna Göre Değişir")
 
     if config["SPOTDL_DOWNLOADER"]:
         os.system(f'spotdl {url}')
@@ -66,7 +66,7 @@ def get_single_song(bot, update):
     os.system(f'rm -rf .temp{message_id}{chat_id}')
 
     if sent == 0:
-       bot.send_message(chat_id=chat_id, text="It seems there was a problem in finding/sending the song.")
+       bot.send_message(chat_id=chat_id, text="Görünüşe göre şarkıyı bulmakta/göndermede bir sorun yaşadım.")
        raise Exception("dl Failed")
     else:
         logging.log(logging.INFO, 'sent')
@@ -80,12 +80,12 @@ def authenticate(bot, update):
         logging.log(logging.INFO, f'new sign in for user {username}, {chat_id}')
         config["AUTH"]["USERS"].append(chat_id)
         update_config()
-        bot.send_message(chat_id=chat_id, text="You signed in successfully. Enjoy🍻")
+        bot.send_message(chat_id=chat_id, text="Girişin Başarılı. Şerefe🍻")
         raise Exception("Signed In")
     elif chat_id not in config["AUTH"]["USERS"]:
         logging.log(logging.INFO, f'not authenticated try')
-        bot.send_message(chat_id=chat_id, text="⚠️This bot is personal and you are not signed in. Please enter the "
-                                               "password to sign in. If you don't know it contact the bot owner. ")
+        bot.send_message(chat_id=chat_id, text="⚠️Bu bot kişiseldir oturum sizde değil."
+                                               "oturum açma parolasını girin. Bilmiyorsanız bot sahibiyle iletişime geçin. ")
         raise Exception("Not Signed In")
 
 
