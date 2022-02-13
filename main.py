@@ -83,8 +83,6 @@ async def start(client, message):
     await client.send_message(message.chat.id, f"""
 **Merhaba**\nBen Bir Spotify İndiriciyim Benim sayemde Spotify Linklerini Telegrama Yükleyebilirsin.\nÖrnek: `https://open.spotify.com/playlist/37i9dQZF1DX5H8QSpChffy?si=JjOBJbrYSq-aHtDGloW4Ag`""")
 
-
-
 def authenticate(bot, update):
     username = update.message.chat.username
     chat_id = update.effective_message.chat_id
