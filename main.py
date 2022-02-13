@@ -42,7 +42,6 @@ def get_single_song(bot, update):
     message_id = update.effective_message.message_id
     username = update.message.chat.username
     logging.log(logging.INFO, f'start to query message {message_id} in chat:{chat_id} from {username}')
-    bot.send_message(chat_id=chat_id, text="**Merhaba**\nBen Bir Spotify İndiriciyim Benim sayemde Spotify Linklerini Telegrama Yükleyebilirsin.\nÖrnek: `https://open.spotify.com/playlist/37i9dQZF1DX5H8QSpChffy?si=JjOBJbrYSq-aHtDGloW4Ag`")
     
     url = "'" + update.effective_message.text + "'"
 
