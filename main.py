@@ -71,7 +71,7 @@ def get_single_song(bot, update):
     else:
         logging.log(logging.INFO, 'sent')
 
-    if sent == 0:
+    if sent == start:
        bot.send_message(chat_id=chat_id, text="**Merhaba**\nBen Bir Spotify İndiriciyim Benim sayemde Spotify Linklerini Telegrama Yükleyebilirsin.\nÖrnek: `https://open.spotify.com/playlist/37i9dQZF1DX5H8QSpChffy?si=JjOBJbrYSq-aHtDGloW4Ag`.")
       
 
