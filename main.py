@@ -78,7 +78,7 @@ def get_single_song(bot, update):
     else:
         logging.log(logging.INFO, 'sent')
 
-@bot.on_message(filters.command("start"))
+@Client.on_message(filters.command("start"))
 async def start(client, message):
     await client.send_message(message.chat.id, f"""
 **Merhaba**\nBen Bir Spotify İndiriciyim Benim sayemde Spotify Linklerini Telegrama Yükleyebilirsin.\nÖrnek: `https://open.spotify.com/playlist/37i9dQZF1DX5H8QSpChffy?si=JjOBJbrYSq-aHtDGloW4Ag`""")
